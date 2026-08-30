@@ -63,7 +63,7 @@
         探索 <span class="gradient-text">Token 经济学</span> 与<br/>大模型极限推理性能优化
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-        聚焦 AI 基础设施（Infra）、两维解耦调度、专属裸机推理引擎与非线性格点混合量化技术。
+        聚焦 AI 基础设施（Infra）、两维解耦调度、GPU/NPU 异构协同、专属裸机推理引擎与非线性格点混合量化技术。
       </p>
     </div>
 
@@ -83,18 +83,18 @@
       </h2>
 
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-        从技术与产业双重视角，全景拆解「五层技术蛋糕 × 三大算力阵营（数据中心/ASIC/端侧UMA）× 两维解耦调度（PD/AM分离）× SOTA 开源模型 × IQ2/IQ4 混合量化」，探寻企业如何将每百万 Token 推理成本从 $1.00 压缩至 $0.01 的四阶实施路线。
+        从技术与产业双重视角，全景拆解「五层技术蛋糕 × 三大算力阵营（数据中心/ASIC/端侧UMA）× 两维解耦调度（PD/AM分离）× GPU/NPU 异构协同 × SOTA 开源模型 × IQ2/IQ4 混合量化」，探寻企业如何将每百万 Token 推理成本从 $1.00 压缩至 $0.01 的四阶实施路线。
       </p>
 
       <!-- Key Insights Badge List -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-6 text-xs">
         <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-          <div class="font-bold text-blue-600 dark:text-blue-400">Jevons 悖论</div>
-          <div class="text-slate-500 mt-0.5">降价百倍激发千倍机器级消耗</div>
+          <div class="font-bold text-blue-600 dark:text-blue-400">两维解耦调度</div>
+          <div class="text-slate-500 mt-0.5">PD分离 + AM分离 (JANUS)</div>
         </div>
         <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-          <div class="font-bold text-purple-600 dark:text-purple-400">两维解耦调度</div>
-          <div class="text-slate-500 mt-0.5">PD分离 + AM分离 (JANUS)</div>
+          <div class="font-bold text-amber-600 dark:text-amber-400">GPU / NPU 异构调度</div>
+          <div class="text-slate-500 mt-0.5">集群混部 + 移动 SoC 协同</div>
         </div>
         <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
           <div class="font-bold text-pink-600 dark:text-pink-400">OpenAI Jalapeño</div>
@@ -102,7 +102,7 @@
         </div>
         <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
           <div class="font-bold text-emerald-600 dark:text-emerald-400">IQ2 混合量化</div>
-          <div class="text-slate-500 mt-0.5">671B 压至 195GB 桌面单机常驻</div>
+          <div class="text-slate-500 mt-0.5">671B 压至 195GB 桌面常驻</div>
         </div>
       </div>
 
@@ -121,7 +121,7 @@
     <!-- Research & Systems Showcase Grid -->
     <div class="space-y-6">
       <h3 class="text-xl font-bold tracking-tight">🔬 核心开源项目与系统研发矩阵</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: DS4 / DS4.c -->
         <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
@@ -131,7 +131,7 @@
           </div>
           <h4 class="text-lg font-bold mb-2">DS4 / DS4.c</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            DeepSeek-V4 Flash / Pro 专属纯 C/CUDA/Metal 裸机推理引擎，支持 IQ2/IQ4 混合位宽与持久化 Kernel，消除 Python 调度税。
+            DeepSeek-V4 专属纯 C/CUDA/Metal 裸机推理引擎，原生内嵌 IQ2/IQ4 混合量化与持久化 Kernel。
           </p>
         </div>
 
@@ -141,13 +141,25 @@
             <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase">Multimodal Engine</span>
             <span class="text-xs text-slate-400">mu25</span>
           </div>
-          <h4 class="text-lg font-bold mb-2">mu25 多模态裸机引擎</h4>
+          <h4 class="text-lg font-bold mb-2">mu25 多模态引擎</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            面向 MinerU2.5 与视觉大模型栈的纯 C++/CUDA 裸机推理系统，在 L20 与 GB10 芯片上实测 TTFT 缩短 20.9%，TPOT 缩短 27.3%。
+            MinerU2.5 纯 C++/CUDA 裸机推理系统，L20 / GB10 芯片实测 TTFT 缩短 20.9%，TPOT 缩短 27.3%。
           </p>
         </div>
 
-        <!-- Card 3: Kernel Design Agents -->
+        <!-- Card 3: Heterogeneous Orchestration -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">Heterogeneous</span>
+            <a href="https://github.com/wilhelmjung/TokenResearch/tree/main/paper" target="_blank" class="text-slate-400 hover:text-slate-600 text-xs">Paper ➔</a>
+          </div>
+          <h4 class="text-lg font-bold mb-2">GPU / NPU 异构调度</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            覆盖集群级 H800/H20 混部与端侧 SoC（HeteroInfer/PowerInfer-2）GPU 与 NPU 细粒度张量协同调度。
+          </p>
+        </div>
+
+        <!-- Card 4: Kernel Design Agents -->
         <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">AI for Systems</span>
@@ -155,7 +167,7 @@
           </div>
           <h4 class="text-lg font-bold mb-2">Kernel Design Agents</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            基于 LLM Agent 与树搜索（MCTS）的异构高性能计算算子自动生成与调优系统，突破传统手动编写 CUDA/Triton 内核瓶颈。
+            基于 Agent 与 MCTS 树搜索的高性能异构内核（CUDA/Triton/Ascend）自动生成与编译优化。
           </p>
         </div>
 
