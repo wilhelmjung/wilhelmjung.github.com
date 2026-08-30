@@ -1,69 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wilhelm Jung · Engineering Blog & AI Research</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .gradient-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-300">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Wilhelmjung.github.com : Welcome to my blog, may the source be with you!" />
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-sm shadow">
+          W
+        </div>
+        <span class="font-extrabold text-lg tracking-tight gradient-text">Wilhelm Jung</span>
+      </div>
+      <div class="flex items-center space-x-4 text-sm font-medium">
+        <a href="https://github.com/wilhelmjung" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+          GitHub
+        </a>
+        <a href="https://wilhelmjung.github.io/TokenResearch/" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow transition">
+          ⚡ TokenResearch Live
+        </a>
+        <button onclick="document.documentElement.classList.toggle('dark')" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs">
+          🌓
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Wilhelmjung.github.com</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/wilhelmjung">View on GitHub</a>
-
-          <h1 id="project_title">Wilhelmjung.github.com</h1>
-          <h2 id="project_tagline">Welcome to my blog, may the source be with you!</h2>
-
-        </header>
+  <!-- Hero Header -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-xs font-semibold">
+        AI Infra & Systems Research · 2026
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+        探索 <span class="gradient-text">Token 经济学</span> 与<br/>大模型极限推理性能优化
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+        聚焦 AI 基础设施（Infra）、两维解耦调度、专属裸机推理引擎与非线性格点混合量化技术。
+      </p>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+    <!-- Featured Post: TokenResearch 2026 -->
+    <div class="glass-card rounded-3xl p-8 sm:p-10 border border-indigo-500/30 shadow-xl relative overflow-hidden bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/20 dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/30">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="px-3 py-1 rounded-md bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider">
+          🔥 重磅最新研究 · Featured Whitepaper
+        </span>
+        <span class="text-xs text-slate-500">2026 年 8 月 · 全栈白皮书</span>
+      </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+      <h2 class="text-2xl sm:text-3xl font-black mb-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+        <a href="https://wilhelmjung.github.io/TokenResearch/" target="_blank">
+          2026 Token 经济学与大模型推理 100 倍降本全栈白皮书
+        </a>
+      </h2>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+        从技术与产业双重视角，全景拆解「五层技术蛋糕 × 三大算力阵营（数据中心/ASIC/端侧UMA）× 两维解耦调度（PD/AM分离）× SOTA 开源模型 × IQ2/IQ4 混合量化」，探寻企业如何将每百万 Token 推理成本从 $1.00 压缩至 $0.01 的四阶实施路线。
+      </p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+      <!-- Key Insights Badge List -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-6 text-xs">
+        <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+          <div class="font-bold text-blue-600 dark:text-blue-400">Jevons 悖论</div>
+          <div class="text-slate-500 mt-0.5">降价百倍激发千倍机器级消耗</div>
+        </div>
+        <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+          <div class="font-bold text-purple-600 dark:text-purple-400">两维解耦调度</div>
+          <div class="text-slate-500 mt-0.5">PD分离 + AM分离 (JANUS)</div>
+        </div>
+        <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+          <div class="font-bold text-pink-600 dark:text-pink-400">OpenAI Jalapeño</div>
+          <div class="text-slate-500 mt-0.5">15.4TB/s HBM4 近存统一解法</div>
+        </div>
+        <div class="p-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+          <div class="font-bold text-emerald-600 dark:text-emerald-400">IQ2 混合量化</div>
+          <div class="text-slate-500 mt-0.5">671B 压至 195GB 桌面单机常驻</div>
+        </div>
+      </div>
 
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="https://wilhelmjung.github.io/TokenResearch/" target="_blank" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-md transition inline-flex items-center">
+          <span>🖥️ 打开交互式演示大屏 & TCO 测算器</span>
+          <span class="ml-1.5">➔</span>
+        </a>
+        <a href="https://github.com/wilhelmjung/TokenResearch" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
+          📂 访问 GitHub 源码与白皮书
+        </a>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>This blog is published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <!-- Research & Systems Showcase Grid -->
+    <div class="space-y-6">
+      <h3 class="text-xl font-bold tracking-tight">🔬 核心开源项目与系统研发矩阵</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: DS4 / DS4.c -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase">Baremetal Engine</span>
+            <a href="https://github.com/wilhelmjung/ds4" target="_blank" class="text-slate-400 hover:text-slate-600 text-xs">Repo ➔</a>
+          </div>
+          <h4 class="text-lg font-bold mb-2">DS4 / DS4.c</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            DeepSeek-V4 Flash / Pro 专属纯 C/CUDA/Metal 裸机推理引擎，支持 IQ2/IQ4 混合位宽与持久化 Kernel，消除 Python 调度税。
+          </p>
+        </div>
+
+        <!-- Card 2: mu25 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase">Multimodal Engine</span>
+            <span class="text-xs text-slate-400">mu25</span>
+          </div>
+          <h4 class="text-lg font-bold mb-2">mu25 多模态裸机引擎</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            面向 MinerU2.5 与视觉大模型栈的纯 C++/CUDA 裸机推理系统，在 L20 与 GB10 芯片上实测 TTFT 缩短 20.9%，TPOT 缩短 27.3%。
+          </p>
+        </div>
+
+        <!-- Card 3: Kernel Design Agents -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-pink-600 dark:text-pink-400 uppercase">AI for Systems</span>
+            <a href="https://github.com/wilhelmjung/kernel-design-agents" target="_blank" class="text-slate-400 hover:text-slate-600 text-xs">Repo ➔</a>
+          </div>
+          <h4 class="text-lg font-bold mb-2">Kernel Design Agents</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            基于 LLM Agent 与树搜索（MCTS）的异构高性能计算算子自动生成与调优系统，突破传统手动编写 CUDA/Triton 内核瓶颈。
+          </p>
+        </div>
+
+      </div>
     </div>
+  </main>
 
-    
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
+    <p>© 2026 Wilhelm Jung · Powered by GitHub Pages</p>
+  </footer>
 
-  </body>
+</body>
 </html>
